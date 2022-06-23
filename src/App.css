@@ -43,8 +43,8 @@
 }
 
 .title{
-  font-size: 35px;
-  text-shadow: 1px 1px #61dafb;
+  font-size: 50px;
+  text-shadow: 1px 2px #61dafb;
   margin-top: 0%;
 }
 
@@ -53,5 +53,9 @@
 }
 
 .icon {
-  margin-left: 2rem; /* 4px */
+  margin-left: 3rem; /* 4px */
+}
+
+.row{
+  margin-top: 14px;
 }
