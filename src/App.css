@@ -59,3 +59,44 @@
 .row{
   margin-top: 15px;
 }
+
+.projectHeading{
+  float:right;
+  margin-right: 30px;
+  margin-top: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.projectHeading:hover{
+  color: #61dafb;
+}
+
+.homeHeading{
+  float:right;
+  margin-right: 30px;
+  margin-top: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.homeHeading:hover{
+  color: #61dafb;
+}
+
+.iconProject{
+  color: black;
+  margin-left: 15px;
+}
+
+.projectPage {
+  text-align: center;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),url(../public/images/wallpaper.jpg);
+  background-size: cover;
+  background-position: top;
+  min-height: 100%;
+  height: 100vh;
+  position: relative;
+}
