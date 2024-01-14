@@ -1,11 +1,13 @@
 import "./App.css";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
+      <Link to="/projects" className="projectHeading">Projects</Link>
       <header className="App-header">
         <p className="title">Hello there! I'm Binuri</p>
-        <div className="row">
+        <div>
           <a
             className="icon"
             href="https://www.linkedin.com/in/binuri-maleesha/"
@@ -44,7 +46,7 @@ function App() {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="fa fa-medium" aria-hidden="true"></i>
+            <i className="fa fa-medium" aria-hidden="true"></i>
           </a>
         </div>
       </header>
