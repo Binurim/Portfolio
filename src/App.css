@@ -100,3 +100,16 @@
   height: 100vh;
   position: relative;
 }
+
+a:hover i {
+  transform: scale(1.2);
+}
+
+.project-year{
+  font-size: 12px;
+  font-style: italic;
+}
+
+.btn-primary{
+  background: #1298bd;
+}
