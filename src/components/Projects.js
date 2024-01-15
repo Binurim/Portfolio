@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Projects = (props) => {
+
+  const sortedProjects = props.props.sort((a, b) => b.year - a.year);
+
   return (
     <div className="projectPage">
       <div>
@@ -10,14 +13,14 @@ const Projects = (props) => {
       </div>
       <br />
       <div className="row">
-        {props.props.map((project) => {
+        {sortedProjects.map((project) => {
           return (
             <div
               className="card"
               style={{
-                width: "18rem",
-                marginLeft: "50px",
-                marginBottom: "15px",
+                width: '18rem',
+                marginLeft: '50px',
+                marginBottom: '15px',
               }}
             >
               <div className="card-body">
@@ -26,24 +29,27 @@ const Projects = (props) => {
                   Technologies:
                   {project.technologies.map((technology, i, row) =>
                     i + 1 === row.length
-                      ? " " + technology
-                      : " " + technology + " | "
+                      ? ' ' + technology
+                      : ' ' + technology + ' | '
                   )}
                 </p>
-                <a
-                  href={project.projectLink}
-                  target="_blank"
-                  className="btn btn-primary"
-                  rel="noreferrer"
-                >
-                  View Project
-                </a>
+                {project.projectLink !== '#' ? (
+                  <a
+                    href={project.projectLink}
+                    target="_blank"
+                    className="btn btn-primary"
+                    rel="noreferrer"
+                  >
+                    Explore Project
+                  </a>
+                ) : undefined}
                 <a href={project.gitHubLink} target="_blank" rel="noreferrer">
                   <i
                     className="fa fa-lg fa-github iconProject"
                     aria-hidden="true"
                   ></i>
                 </a>
+                <p className='project-year mt-2'>Year: {project.year}</p>
               </div>
             </div>
           );
