@@ -4,7 +4,7 @@ const MainContent = () => {
       Coming Soon{' '}
       <span>
         <div
-          class="spinner-grow spinner-grow-sm text-info"
+          className="spinner-grow spinner-grow-sm text-info"
           role="status"
           style={{ width: '0.7rem', height: '0.7rem' }}
         ></div>
