@@ -20,6 +20,14 @@ const Footer = () => {
         </a>
         <a
           className="icon"
+          href="https://medium.com/@binurim"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i className="fa fa-medium" aria-hidden="true"></i>
+        </a>
+        <a
+          className="icon"
           href="https://www.instagram.com/binuri_/"
           target="_blank"
           rel="noreferrer"
@@ -28,19 +36,11 @@ const Footer = () => {
         </a>
         <a
           className="icon"
-          href="https://www.pinterest.com/binurim_/"
+          href="https://www.youtube.com/@BinuriManorathna"
           target="_blank"
           rel="noreferrer"
         >
-          <i className="fa fa-pinterest" aria-hidden="true"></i>
-        </a>
-        <a
-          className="icon"
-          href="https://medium.com/@binurim"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <i className="fa fa-medium" aria-hidden="true"></i>
+          <i className="fa fa-youtube" aria-hidden="true"></i>
         </a>
       </div>
 

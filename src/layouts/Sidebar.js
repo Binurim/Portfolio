@@ -1,27 +1,51 @@
-import Footer from './Footer';
+const Sidebar = ({ onSectionChange, activeSection }) => {
+  
+  const handleClick = (section, e) => {
+    e.preventDefault();
+    onSectionChange(section);
+  };
 
-const Sidebar = () => {
   return (
     <div className="section">
       <div className="sectionHeader">
         <ul>
           <li>
-            <a href="#section1">ABOUT</a>
+            <a 
+              href="#about" 
+              className={activeSection === 'about' ? 'active' : ''}
+              onClick={(e) => handleClick('about', e)}
+            >
+              ABOUT
+            </a>
           </li>
           <li>
-            <a href="#section2">EXPERIENCE</a>
+            <a 
+              href="#experience" 
+              className={activeSection === 'experience' ? 'active' : ''}
+              onClick={(e) => handleClick('experience', e)}
+            >
+              EXPERIENCE
+            </a>
           </li>
           <li>
-            <a href="#section3">AWARDS | CERTIFICATION</a>
+            <a 
+              href="#awards" 
+              className={activeSection === 'awards' ? 'active' : ''}
+              onClick={(e) => handleClick('awards', e)}
+            >
+              AWARDS | CERTIFICATION
+            </a>
           </li>
           <li>
-            <a href="#section3">PROJECTS</a>
+            <a 
+              href="#projects" 
+              className={activeSection === 'projects' ? 'active' : ''}
+              onClick={(e) => handleClick('projects', e)}
+            >
+              PROJECTS
+            </a>
           </li>
-          {/* <Link to="/projects" className="projectHeading">Projects</Link> */}
         </ul>
-      </div>
-      <div>
-        <Footer />
       </div>
     </div>
   );
