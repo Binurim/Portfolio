@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
-import Projects from './components/Projects';
-import { projectList } from './components/shared/ProjectsList';
+// import Projects from './components/Projects';
+// import { projectList } from './components/shared/ProjectsList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +13,7 @@ root.render(
     <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="" element={<App/>} />
-        <Route path="projects" element={<Projects props={projectList}/>} />
+        {/* <Route path="projects" element={<Projects props={projectList}/>} /> */}
       </Routes>
     </Router>
   </React.StrictMode>

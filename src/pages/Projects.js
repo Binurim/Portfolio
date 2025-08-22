@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
 const Projects = (props) => {
-
   const sortedProjects = props.props.sort((a, b) => b.year - a.year);
 
   return (
@@ -49,7 +48,7 @@ const Projects = (props) => {
                     aria-hidden="true"
                   ></i>
                 </a>
-                <p className='project-year mt-2'>Year: {project.year}</p>
+                <p className="project-year mt-2">Year: {project.year}</p>
               </div>
             </div>
           );
