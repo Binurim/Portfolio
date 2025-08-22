@@ -1,11 +1,147 @@
+:root {
+  /* Font Families */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+
+  /* Colors (Example from her site's palette) */
+  --navy: #0a192f;
+  --light-navy: #112240;
+  --lightest-navy: #233554;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --white: #e6f1ff;
+  --green: #64ffda;
+  --green-tint: rgba(100, 255, 218, 0.1);
+
+  /* Font Sizes */
+  --fz-xxs: 12px;
+  --fz-xs: 13px;
+  --fz-sm: 14px;
+  --fz-md: 16px;
+  --fz-lg: 18px;
+  --fz-xl: 20px;
+  --fz-xxl: 22px;
+  --fz-heading: 32px;
+
+  /* Other Sizing & Effects */
+  --border-radius: 4px;
+  --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.full-screen-section {
+  /* Use dynamic viewport units to handle mobile UI quirks */
+  height: 100dvh;
+  /* or 100svh for small viewport */
+  width: 100vw;
+
+  /* This ensures padding and border are included in the width/height */
+  box-sizing: border-box;
+
+  /* Prevent any scrolling inside this element */
+  overflow: hidden;
+
+  /* Optional: Prevent horizontal scroll caused by margin/padding */
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--navy);
+}
+
+h1 {
+  color: white;
+  font-weight: 700;
+}
+
+h4 {
+  color: white;
+}
+
+.container {
+  margin-top: 50px;
+  max-width: 600px;
+  padding: 0 40px;
+  color: var(--lightest-slate);
+}
+
+.button {
+  background-color: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  padding: 1rem 1.75rem;
+  font-family: var(--font-mono);
+  font-size: var(--fz-sm);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--green-tint);
+  outline: none;
+}
+
+.section {
+  padding: 100px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+/* .sectionHeader::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 300px;
+  background-color: var(--lightest-navy);
+  margin-left: 20px;
+} */
+
+.sectionTitle {
+  color: var(--lightest-slate);
+  font-size: var(--fz-heading);
+  font-weight: 600;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin-bottom: 1rem;
+}
+
+ul li a {
+  color: var(--lightest-slate);
+  text-decoration: none;
+  font-size: var(--fz-md);
+  transition: color var(--transition);
+  margin-bottom: 1rem;
+}
+
+a:hover {
+  color: #61dafb;
+}
+
+
+/* TODO: Refactor below App Styles */
 .App {
   text-align: center;
-  background-image: url(../public/images/wallpaper.jpg);
+  /* background-image: url(../public/images/wallpaper.jpg); */
   background-size: cover;
   background-position: top;
   min-height: 100%;
   height: 100vh;
   position: relative;
+  background-color: #0a192f;
 }
 
 .App-logo {
@@ -33,16 +169,8 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-.title{
+.title {
   font-size: 50px;
   text-shadow: 1px 2px #61dafb;
   margin-top: 0%;
@@ -53,15 +181,16 @@
 }
 
 .icon {
-  margin-left: 3rem; /* 4px */
+  margin-left: 3rem;
+  /* 4px */
 }
 
-.row{
+.row {
   margin-top: 15px;
 }
 
-.projectHeading{
-  float:right;
+.projectHeading {
+  float: right;
   margin-right: 30px;
   margin-top: 15px;
   color: white;
@@ -69,12 +198,12 @@
   font-size: 20px;
 }
 
-.projectHeading:hover{
+.projectHeading:hover {
   color: #61dafb;
 }
 
-.homeHeading{
-  float:right;
+.homeHeading {
+  float: right;
   margin-right: 30px;
   margin-top: 15px;
   color: white;
@@ -82,18 +211,19 @@
   font-size: 20px;
 }
 
-.homeHeading:hover{
+.homeHeading:hover {
   color: #61dafb;
 }
 
-.iconProject{
+.iconProject {
   color: black;
   margin-left: 15px;
 }
 
 .projectPage {
   text-align: center;
-  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),url(../public/images/wallpaper.jpg);
+  background-color: #0a192f;
+  /* background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),url(../public/images/wallpaper.jpg); */
   background-size: cover;
   background-position: top;
   min-height: 100%;
@@ -105,11 +235,11 @@ a:hover i {
   transform: scale(1.2);
 }
 
-.project-year{
+.project-year {
   font-size: 12px;
   font-style: italic;
 }
 
-.btn-primary{
+.btn-primary {
   background: #1298bd;
 }
