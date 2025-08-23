@@ -20,17 +20,17 @@ const Education = () => {
 
   return (
     <div id="education" className="education">
-      <h2>Education</h2>
+      <h3>Education</h3>
       {EducationData.map((education) => (
-        <>
-          <div className="card glass-card" key={education.id}>
+        <div key={education.id}>
+          <div className="card glass-card">
             <div className="card-body">
               <h5 className="card-title">{education.title}</h5>
               <p className="card-text">{education.description}</p>
             </div>
           </div>
           <br />
-        </>
+        </div>
       ))}
     </div>
   );

@@ -43,7 +43,7 @@
 
 .container {
   max-width: 800px;
-  padding: 0 40px;
+  padding: 0 50px;
   color: var(--lightest-slate);
 }
 
@@ -85,9 +85,10 @@ h4 {
   display: flex;
   align-items: center;
   margin-bottom: 2.5rem;
+  margin-top: 5rem;
 }
 
- .sectionHeader::after {
+.sectionHeader::after {
   content: '';
   display: block;
   height: 1px;
@@ -137,7 +138,8 @@ ul li a {
 }
 
 a:hover {
-  color: #61dafb;
+  color: var(--green);
+  transform: scale(1.5);
 }
 
 /*Footer Styles*/
@@ -203,4 +205,8 @@ a:hover i {
 .card-text {
   font-size: var(--fz-sm);
   color: var(--light-slate);
+}
+
+html {
+  scroll-behavior: smooth;
 }

@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <div id="about" className="about">
-      <h2>About Me</h2>
+      <h3>About Me</h3>
       <img
         className="profile-image"
         src={require('../assets/profileImage.jpeg')}

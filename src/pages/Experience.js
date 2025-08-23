@@ -35,12 +35,12 @@ const Experience = () => {
   ];
   return (
     <div id="experience" className="experience">
-      <h2>Experience</h2>
+      <h3>Experience</h3>
       {experienceData.map((exp, index) => (
-        <div>
+        <div key={exp.id}>
           <div className="card glass-card">
             <div className="card-body">
-              <div className="row mt-3" key={exp.id}>
+              <div className="row mt-3">
                 <div className="col-md-4 time">{exp.time}</div>
                 <div className="col-md-8">
                   <h6 className="card-title">
@@ -60,12 +60,3 @@ const Experience = () => {
 };
 
 export default Experience;
-
-{
-  /* <li>Developed and maintained web applications using React.js, ensuring high performance and responsiveness across various devices.</li>
-          <li>Collaborated with cross-functional teams to define, design, and ship new features, enhancing user experience and functionality.</li>
-          <li>Implemented responsive design principles to ensure seamless user experiences on both desktop and mobile platforms.</li>
-          <li>Optimized application performance by identifying and addressing bottlenecks, resulting in a 20% reduction in load times.</li>
-          <li>Participated in code reviews and provided constructive feedback to team members, fostering a culture of continuous improvement.</li>
-           */
-}

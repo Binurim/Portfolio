@@ -7,20 +7,17 @@ const Awards = () => {
 
   return (
     <div className="awards" id="awards">
-      <h2>Awards & Certificatiossn</h2>
-      <br />
-      <ul>
-        {awardsData.map((award) => (
-          <>
-            <div className="card glass-card" key={award.id}>
-              <div className="card-body">
-                <li>{award.title}</li>
-              </div>
+      <h3>Awards & Certification</h3>
+      {awardsData.map((award) => (
+        <div key={award.id}>
+          <div className="card glass-card">
+            <div className="card-body">
+              <h6 className="card-title">{award.title}</h6>
             </div>
-            <br />
-          </>
-        ))}
-      </ul>
+          </div>
+          <br />
+        </div>
+      ))}
     </div>
   );
 };

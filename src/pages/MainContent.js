@@ -5,36 +5,30 @@ import Projects from './Projects';
 import Education from './Education';
 import { projectList } from '../shared/ProjectsList';
 
-const MainContent = ({ activeSection }) => {
-  const renderSection = () => {
-    switch (activeSection) {
-      case 'about':
-        return <About />;
-      case 'experience':
-        return <Experience />;
-      case 'education':
-        return <Education />;
-      case 'awards':
-        return <Awards />;
-      case 'projects':
-        return <Projects props={projectList} />;
-      default:
-        return (
-          <div>
-            Coming Soon{' '}
-            <span>
-              <div
-                className="spinner-grow spinner-grow-sm text-info"
-                role="status"
-                style={{ width: '0.7rem', height: '0.7rem' }}
-              ></div>
-            </span>
-          </div>
-        );
-    }
-  };
+const MainContent = () => {
+  return (
+    <section className="main-content">
+      <section id="about" className="section">
+        <About />
+      </section>
 
-  return <div className="main-content mt-2">{renderSection()}</div>;
+      <section id="experience" className="section">
+        <Experience />
+      </section>
+
+      <section id="education" className="section">
+        <Education />
+      </section>
+
+      <section id="awards" className="section">
+        <Awards />
+      </section>
+
+      {/* <section id="projects" className="section">
+        <Projects props={projectList} />
+      </section> */}
+    </section>
+  );
 };
 
 export default MainContent;

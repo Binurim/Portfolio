@@ -2,7 +2,7 @@ const Projects = (props) => {
   const sortedProjects = props.props.sort((a, b) => b.year - a.year);
   return (
     <div className="projects" id="projects">
-      <h2>Projects</h2>
+      <h3>Projects</h3>
       <br />
       <div className="row">
         {sortedProjects.map((project, index) => {

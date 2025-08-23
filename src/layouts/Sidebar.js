@@ -1,4 +1,4 @@
-const Sidebar = ({ onSectionChange, activeSection }) => {
+const Sidebar = ({ activeSection }) => {
 
    const sections = [
     { id: 'about', label: 'ABOUT' },
@@ -8,15 +8,24 @@ const Sidebar = ({ onSectionChange, activeSection }) => {
     // { id: 'projects', label: 'PROJECTS' },
 ];
 
+ const handleClick = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="section">
+      <h1>Binuri Manorathna</h1>
+      <h4>Front End Engineer</h4>
       <div className="sectionHeader">
         <ul>
           {sections.map((section) => (
             <li key={section.id}>
               <a
                 className={activeSection === section.id ? 'active' : ''}
-                onClick={() => onSectionChange(section.id)}
+                onClick={() => handleClick(section.id)}
                 id={`tab-${section.id}`}
                 href={`#${section.id}`}
                 role="tab"
