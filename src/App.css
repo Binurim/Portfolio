@@ -29,24 +29,41 @@
   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+/* App-CSS */
 .full-screen-section {
-  /* Use dynamic viewport units to handle mobile UI quirks */
   height: 100dvh;
-  /* or 100svh for small viewport */
   width: 100vw;
-
-  /* This ensures padding and border are included in the width/height */
   box-sizing: border-box;
-
-  /* Prevent any scrolling inside this element */
-  overflow: hidden;
-
-  /* Optional: Prevent horizontal scroll caused by margin/padding */
+  overflow: auto;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
-
   background-color: var(--navy);
+} 
+
+.container {
+  max-width: 800px;
+  padding: 0 50px;
+  color: var(--lightest-slate);
 }
+
+.header {
+  position: fixed;
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    /* box-shadow: 0 2px 4px rgba(0,0,0,.1); */
+  }
+  
+  .vh-lg-100 {
+    height: auto !important;
+  }
+}
+
 
 h1 {
   color: white;
@@ -54,53 +71,31 @@ h1 {
 }
 
 h4 {
-  color: white;
+  color: var(--slate);
 }
 
-.container {
-  margin-top: 50px;
-  max-width: 600px;
-  padding: 0 40px;
-  color: var(--lightest-slate);
-}
-
-.button {
-  background-color: transparent;
-  color: var(--green);
-  border: 1px solid var(--green);
-  border-radius: var(--border-radius);
-  padding: 1rem 1.75rem;
-  font-family: var(--font-mono);
-  font-size: var(--fz-sm);
-  transition: var(--transition);
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: var(--green-tint);
-  outline: none;
-}
-
+/* Sidebar Styles */
 .section {
-  padding: 100px 0;
-  max-width: 1000px;
-  margin: 0 auto;
+   padding: 100px 0; 
+   max-width: 1000px; 
+   margin: 0 auto; 
 }
 
 .sectionHeader {
   display: flex;
   align-items: center;
   margin-bottom: 2.5rem;
+  margin-top: 5rem;
 }
 
-/* .sectionHeader::after {
+.sectionHeader::after {
   content: '';
   display: block;
   height: 1px;
   width: 300px;
-  background-color: var(--lightest-navy);
+  /* background-color: var(--lightest-navy); */
   margin-left: 20px;
-} */
+} 
 
 .sectionTitle {
   color: var(--lightest-slate);
@@ -127,53 +122,31 @@ ul li a {
   margin-bottom: 1rem;
 }
 
+.sidebar-button {
+  background: none;
+  border: none;
+  color: var(--lightest-slate);
+  font-size: var(--fz-md);
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font-sans);
+  /* transition: color var(--transition); */
+}
+
+.active {
+  color: #61dafb;
+}
+
 a:hover {
-  color: #61dafb;
+  color: var(--green);
+  transform: scale(1.5);
 }
 
-
-/* TODO: Refactor below App Styles */
-.App {
-  text-align: center;
-  /* background-image: url(../public/images/wallpaper.jpg); */
-  background-size: cover;
-  background-position: top;
-  min-height: 100%;
-  height: 100vh;
-  position: relative;
-  background-color: #0a192f;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-
-.title {
-  font-size: 50px;
-  text-shadow: 1px 2px #61dafb;
-  margin-top: 0%;
+/*Footer Styles*/
+.footer {
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
 }
 
 .fa {
@@ -181,65 +154,59 @@ a:hover {
 }
 
 .icon {
-  margin-left: 3rem;
-  /* 4px */
-}
-
-.row {
-  margin-top: 15px;
-}
-
-.projectHeading {
-  float: right;
-  margin-right: 30px;
-  margin-top: 15px;
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.projectHeading:hover {
-  color: #61dafb;
-}
-
-.homeHeading {
-  float: right;
-  margin-right: 30px;
-  margin-top: 15px;
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.homeHeading:hover {
-  color: #61dafb;
-}
-
-.iconProject {
-  color: black;
-  margin-left: 15px;
-}
-
-.projectPage {
-  text-align: center;
-  background-color: #0a192f;
-  /* background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),url(../public/images/wallpaper.jpg); */
-  background-size: cover;
-  background-position: top;
-  min-height: 100%;
-  height: 100vh;
-  position: relative;
+  margin-right: 2rem;
 }
 
 a:hover i {
-  transform: scale(1.2);
+  transform: scale(1.5);
+} 
+
+/* Button Styles */
+.button {
+  background-color: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  padding: 1rem 1.75rem;
+  font-family: var(--font-mono);
+  font-size: var(--fz-sm);
+  transition: var(--transition);
+  cursor: pointer;
 }
 
-.project-year {
-  font-size: 12px;
-  font-style: italic;
+.button:hover {
+  background-color: var(--green-tint);
+  outline: none;
 }
 
-.btn-primary {
-  background: #1298bd;
+/* Profile Image Styles */
+.profile-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 2px solid #61dafb; 
+}
+
+.time {
+  font-size: var(--fz-xs);
+  color: var(--light-slate);
+}
+
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.048);
+  /* White with 20% opacity */
+  border: 1px solid rgba(255, 255, 255, 0);
+  /* Subtle border */
+  border-radius: 1.5em;
+}
+
+.card-text {
+  font-size: var(--fz-sm);
+  color: var(--light-slate);
+}
+
+html {
+  scroll-behavior: smooth;
 }

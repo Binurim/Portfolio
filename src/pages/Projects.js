@@ -1,20 +1,14 @@
-import { Link } from 'react-router-dom';
-
 const Projects = (props) => {
   const sortedProjects = props.props.sort((a, b) => b.year - a.year);
-
   return (
-    <div className="projectPage">
-      <div>
-        <Link to="/" className="homeHeading">
-          Home
-        </Link>
-      </div>
+    <div className="projects" id="projects">
+      <h3>Projects</h3>
       <br />
       <div className="row">
-        {sortedProjects.map((project) => {
+        {sortedProjects.map((project, index) => {
           return (
             <div
+              key={index}
               className="card"
               style={{
                 width: '18rem',
