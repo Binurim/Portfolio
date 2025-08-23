@@ -1,9 +1,9 @@
 import About from './About';
 import Awards from './Awards';
 import Experience from './Experience';
-import Projects from './Projects';
+// import Projects from './Projects';
 import Education from './Education';
-import { projectList } from '../shared/ProjectsList';
+// import { projectList } from '../shared/ProjectsList';
 
 const MainContent = () => {
   return (
