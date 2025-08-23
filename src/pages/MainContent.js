@@ -2,20 +2,22 @@ import About from './About';
 import Awards from './Awards';
 import Experience from './Experience';
 import Projects from './Projects';
+import Education from './Education';
 import { projectList } from '../shared/ProjectsList';
 
 const MainContent = ({ activeSection }) => {
-
   const renderSection = () => {
-    switch(activeSection) {
+    switch (activeSection) {
       case 'about':
         return <About />;
       case 'experience':
         return <Experience />;
+      case 'education':
+        return <Education />;
       case 'awards':
         return <Awards />;
       case 'projects':
-        return <Projects props={projectList}/>;
+        return <Projects props={projectList} />;
       default:
         return (
           <div>
@@ -32,11 +34,7 @@ const MainContent = ({ activeSection }) => {
     }
   };
 
-  return (
-    <div className="main-content mt-2">
-      {renderSection()}
-    </div>
-  );
+  return <div className="main-content mt-2">{renderSection()}</div>;
 };
 
 export default MainContent;

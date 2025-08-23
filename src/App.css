@@ -186,3 +186,21 @@ a:hover i {
   margin-bottom: 20px;
   border: 2px solid #61dafb; 
 }
+
+.time {
+  font-size: var(--fz-xs);
+  color: var(--light-slate);
+}
+
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.048);
+  /* White with 20% opacity */
+  border: 1px solid rgba(255, 255, 255, 0);
+  /* Subtle border */
+  border-radius: 1.5em;
+}
+
+.card-text {
+  font-size: var(--fz-sm);
+  color: var(--light-slate);
+}

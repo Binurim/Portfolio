@@ -1,13 +1,14 @@
 const Projects = (props) => {
   const sortedProjects = props.props.sort((a, b) => b.year - a.year);
   return (
-     <div className="projects">
-      <h2>Projects</h2>  
+    <div className="projects" id="projects">
+      <h2>Projects</h2>
       <br />
       <div className="row">
         {sortedProjects.map((project, index) => {
           return (
-            <div key={index}
+            <div
+              key={index}
               className="card"
               style={{
                 width: '18rem',
