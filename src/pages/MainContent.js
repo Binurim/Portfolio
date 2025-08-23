@@ -33,7 +33,7 @@ const MainContent = ({ activeSection }) => {
   };
 
   return (
-    <div className="main-content">
+    <div className="main-content mt-2">
       {renderSection()}
     </div>
   );

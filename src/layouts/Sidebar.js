@@ -1,50 +1,31 @@
 const Sidebar = ({ onSectionChange, activeSection }) => {
-  
-  const handleClick = (section, e) => {
-    e.preventDefault();
-    onSectionChange(section);
-  };
+
+   const sections = [
+    { id: 'about', label: 'ABOUT' },
+    { id: 'experience', label: 'EXPERIENCE' },
+    { id: 'education', label: 'EDUCATION' },
+    { id: 'awards', label: 'AWARDS | CERTIFICATION' },
+    // { id: 'projects', label: 'PROJECTS' },
+];
 
   return (
     <div className="section">
       <div className="sectionHeader">
         <ul>
-          <li>
-            <a 
-              href="#about" 
-              className={activeSection === 'about' ? 'active' : ''}
-              onClick={(e) => handleClick('about', e)}
-            >
-              ABOUT
-            </a>
-          </li>
-          <li>
-            <a 
-              href="#experience" 
-              className={activeSection === 'experience' ? 'active' : ''}
-              onClick={(e) => handleClick('experience', e)}
-            >
-              EXPERIENCE
-            </a>
-          </li>
-          <li>
-            <a 
-              href="#awards" 
-              className={activeSection === 'awards' ? 'active' : ''}
-              onClick={(e) => handleClick('awards', e)}
-            >
-              AWARDS | CERTIFICATION
-            </a>
-          </li>
-          <li>
-            <a 
-              href="#projects" 
-              className={activeSection === 'projects' ? 'active' : ''}
-              onClick={(e) => handleClick('projects', e)}
-            >
-              PROJECTS
-            </a>
-          </li>
+          {sections.map((section) => (
+            <li key={section.id}>
+              <a
+                className={activeSection === section.id ? 'active' : ''}
+                onClick={() => onSectionChange(section.id)}
+                id={`tab-${section.id}`}
+                href={`#${section.id}`}
+                role="tab"
+                aria-selected={activeSection === section.id ? 'true' : 'false'}
+              >
+                {section.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
