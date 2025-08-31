@@ -41,6 +41,13 @@
   background-color: var(--navy);
 } 
 
+.main-column {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;   /* only scrolls here */
+  -webkit-overflow-scrolling: touch;
+}
+
 .container {
   max-width: 800px;
   padding: 0 50px;
