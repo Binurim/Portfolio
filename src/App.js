@@ -61,7 +61,7 @@ function App() {
             </header>
           </div>
           <div className="col-lg-8 col-md-7 container main-column" ref={mainRef}>
-            <main id="main-content" tabIndex="-1">
+            <main id="main-content" tabIndex="-1" className="main-column">
               <MainContent activeSection={activeSection} />
             </main>
           </div>

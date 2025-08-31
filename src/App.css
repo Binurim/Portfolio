@@ -43,7 +43,6 @@
 
 .main-column {
   flex: 1;
-  height: 100vh;
   overflow-y: auto;   /* only scrolls here */
   -webkit-overflow-scrolling: touch;
 }
