@@ -32,23 +32,23 @@ const Awards = () => {
     },
   ];
 
-  const archives = [
-    { id: 7, title: "Foundations of User Experience (UX) Design" },
-    { id: 8, title: "Participated in Pearson Data Hack - 2019" },
-    {
-      id: 9,
-      title:
-        " HACKAHOLICS 3.0 - Selected for Top 15 finalists- 2019 - Girls only hackathon organized by IEEE WIE Affinity Group of UCSC",
-    },
-    {
-      id: 10,
-      title:
-        "Woman' Up Crossing the hurdles Video Competition 4 th place - Organized by IEEE WIE Affinity Group of Wayamba University -2018",
-    },
-    { id: 11, title: "Participated in IEEEXtreme 12.0 - 2018" },
-    { id: 12, title: "Participated in IEEEXtreme 11.0 - 2017" },
-    { id: 13, title: "HACKAHOLICS 2.0 - 4 th place - 2017" },
-  ];
+  // const archives = [
+  //   { id: 7, title: "Foundations of User Experience (UX) Design" },
+  //   { id: 8, title: "Participated in Pearson Data Hack - 2019" },
+  //   {
+  //     id: 9,
+  //     title:
+  //       " HACKAHOLICS 3.0 - Selected for Top 15 finalists- 2019 - Girls only hackathon organized by IEEE WIE Affinity Group of UCSC",
+  //   },
+  //   {
+  //     id: 10,
+  //     title:
+  //       "Woman' Up Crossing the hurdles Video Competition 4 th place - Organized by IEEE WIE Affinity Group of Wayamba University -2018",
+  //   },
+  //   { id: 11, title: "Participated in IEEEXtreme 12.0 - 2018" },
+  //   { id: 12, title: "Participated in IEEEXtreme 11.0 - 2017" },
+  //   { id: 13, title: "HACKAHOLICS 2.0 - 4 th place - 2017" },
+  // ];
 
   return (
     <div className="awards" id="awards">
