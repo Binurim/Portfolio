@@ -216,3 +216,12 @@ a:hover i {
 html {
   scroll-behavior: smooth;
 }
+
+.card-link{
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.card.glass-card:hover {
+  transform: scale(1.01);
+}
