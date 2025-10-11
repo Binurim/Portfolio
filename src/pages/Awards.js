@@ -8,7 +8,7 @@ const Awards = () => {
     {
       id: 2,
       title: "Senior Front end developer certification in React",
-      link: "https://media.licdn.com/dms/image/v2/D5622AQGdmPgGMZLNFg/feedshare-shrink_1280/feedshare-shrink_1280/0/1704470089199?e=1759363200&v=beta&t=p9z8dLPCoGJBLgFK7_G38Iir7FidIzKvnFVylagVNYA",
+      link: "https://drive.google.com/file/d/1E_iV5RTI3AzmMq7Zw6nNtgbUX1yZcKfR/view",
     },
     {
       id: 3,
@@ -23,12 +23,12 @@ const Awards = () => {
     {
       id: 5,
       title: "Bravo Individual Award - 2023",
-      link: "https://media.licdn.com/dms/image/v2/D5622AQFIQHdAXmF6HQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1680535434148?e=1759363200&v=beta&t=wc1AgC4fzVCWvMnojSLE20811zrky9dZX3IwXjIBzgU",
+      link: "https://drive.google.com/file/d/1rcucVpmqEKrYk-Wbm8P4bPOX8YyoYuwL/view",
     },
     {
       id: 6,
       title: "Bravo Team Award - 2022",
-      link: "https://media.licdn.com/dms/image/v2/C4E22AQHWuKRoMRmkhA/feedshare-shrink_1280/feedshare-shrink_1280/0/1649176349205?e=1759363200&v=beta&t=-3csOm-rzAbDQQmx6zAkVM2-7_q7mehaN_W-4EueJKA",
+      link: "https://drive.google.com/file/d/1lYxyRdkdVgEYQx4yJ92y9JPCFJJzZKwl/view",
     },
   ];
 
