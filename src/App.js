@@ -21,8 +21,8 @@ function App() {
         });
       }, {
       root: mainContent,
-      threshold: 0.2, // section must be at least 20% visible
-      rootMargin: "-30% 0px -30% 0px", 
+      threshold: 0.3, // section must be at least 30% visible
+      rootMargin: "-20% 0px -20% 0px", 
     }
     );
 
