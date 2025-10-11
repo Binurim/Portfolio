@@ -34,8 +34,10 @@ const Experience = () => {
     },
   ];
   return (
-    <div id="experience" className="experience">
-      <h3>Experience</h3>
+    <div id="experience" className="section">
+      <div className="sectionHeader">
+        <h2 className="sectionTitle">Experience</h2>
+      </div>
       {experienceData.map((exp, index) => (
         <div key={exp.id}>
           <div className="card glass-card">

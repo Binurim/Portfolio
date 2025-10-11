@@ -51,11 +51,18 @@ const Awards = () => {
   // ];
 
   return (
-    <div className="awards" id="awards">
-      <h3>Awards & Certification</h3>
+    <div id="awards" className="section">
+      <div className="sectionHeader">
+        <h2 className="sectionTitle">Awards & Certification</h2>
+      </div>
       {awardsData.map((award) => (
         <div key={award.id}>
-          <a className="card-link" href={award.link} target="_blank" rel="noopener noreferrer">
+          <a
+            className="card-link"
+            href={award.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="card glass-card">
               <div className="card-body">
                 <h6 className="card-title">{award.title}</h6>

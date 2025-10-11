@@ -2,32 +2,15 @@ import './App.css';
 import Sidebar from './layouts/Sidebar';
 import MainContent from './pages/MainContent';
 import Footer from './layouts/Footer';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
-  const sidebarRef = useRef(null);
-  const mainRef = useRef(null);
-
-  const handleSectionChange = (section) => {
-    setActiveSection(section);
-  };
 
   useEffect(() => {
-    const sidebar = sidebarRef.current;
-    const main = mainRef.current;
-    if (!sidebar || !main) return;
+    const mainContent = document.querySelector('.main-column');
+    if (!mainContent) return;
 
-    const onWheel = (e) => {
-      // Forward wheel scroll to main content
-      main.scrollBy({ top: e.deltaY, behavior: "auto" });
-    };
-
-    sidebar.addEventListener("wheel", onWheel, { passive: true });
-    return () => sidebar.removeEventListener("wheel", onWheel);
-  }, []);
-  
-  useEffect(() => {
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(
       (entries) => {
@@ -37,6 +20,7 @@ function App() {
           }
         });
       }, {
+      root: mainContent,
       threshold: 0.2, // section must be at least 20% visible
       rootMargin: "-30% 0px -30% 0px", 
     }
@@ -46,27 +30,47 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+   useEffect(() => {
+     const header = document.querySelector('.header');
+     const mainContent = document.querySelector('.main-column');
+
+     if (!header || !mainContent) return;
+
+     const handleWheel = (e) => {
+       e.preventDefault();
+       mainContent.scrollBy({
+         top: e.deltaY,
+         behavior: 'auto',
+       });
+     };
+
+     header.addEventListener('wheel', handleWheel, { passive: false });
+
+     return () => {
+       header.removeEventListener('wheel', handleWheel);
+     };
+   }, []);
+
   return (
     <div className="full-screen-section">
         <div className="row">
-          <div className="col-lg-4 col-md-5 container">
-            <header className="header vh-lg-100 d-flex flex-column" ref={sidebarRef}>
-              <nav aria-label="Main navigation">
-                <Sidebar
-                  onSectionChange={handleSectionChange}
-                  activeSection={activeSection}
-                />
+          <div className="col-lg-4">
+            <header className="header">
+              <div className="container">
+                <Sidebar activeSection={activeSection} />
                 <Footer />
-              </nav>
+              </div>
             </header>
           </div>
-          <div className="col-lg-8 col-md-7 container main-column" ref={mainRef}>
-            <main id="main-content" tabIndex="-1" className="main-column">
-              <MainContent activeSection={activeSection} />
+          <div className="col-lg-8">
+            <main className="main-column">
+              <div className="container-custom">
+                <MainContent />
+              </div>
             </main>
           </div>
         </div>
-    </div>
+      </div>
   );
 }
 

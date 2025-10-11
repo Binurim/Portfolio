@@ -8,18 +8,20 @@ const Sidebar = ({ activeSection }) => {
     // { id: 'projects', label: 'PROJECTS' },
 ];
 
- const handleClick = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
+ const handleClick = (sectionId) => {
+   const sectionEl = document.getElementById(sectionId);
+   if (sectionEl) {
+     sectionEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+   }
+ };
 
   return (
-    <div className="section">
-      <h1>Binuri Manorathna</h1>
-      <h4>Front End Engineer</h4>
-      <div className="sectionHeader">
+    <div className="sidebar">
+      <div className="mb-5">
+        <h1 className="mb-2">Binuri Manorathna</h1>
+        <h4>Front End Engineer</h4>
+      </div>
+      <nav className="sidebar__nav">
         <ul>
           {sections.map((section) => (
             <li key={section.id}>
@@ -36,7 +38,7 @@ const Sidebar = ({ activeSection }) => {
             </li>
           ))}
         </ul>
-      </div>
+      </nav>
     </div>
   );
 };

@@ -19,8 +19,10 @@ const Education = () => {
   ];
 
   return (
-    <div id="education" className="education">
-      <h3>Education</h3>
+    <div id="education" className="section">
+      <div className="sectionHeader">
+        <h2 className="sectionTitle">Education</h2>
+      </div>
       {EducationData.map((education) => (
         <div key={education.id}>
           <div className="card glass-card">
