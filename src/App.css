@@ -392,17 +392,117 @@ a:hover {
   width: 66.666667%;
 }
 
+.mobile-header {
+  display: none;
+}
+      
+.hamburger-button {
+  display: none;
+}
+      
+.mobile-overlay {
+  display: none;
+}
+
 @media (max-width: 991px) {
-  .header {
-    position: sticky;
+  .mobile-header {
+    display: block;
+    position: fixed;
     top: 0;
-    width: 100%;
-    height: auto;
-    min-height: auto;
-    padding: 2rem 0;
+    left: 0;
+    right: 0;
     background-color: var(--navy);
-    z-index: 1000;
     border-bottom: 1px solid var(--lightest-navy);
+    z-index: 1001;
+    padding: 1rem 2rem;
+  }
+
+  .mobile-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002;
+  }
+
+  .hamburger-line {
+    width: 2rem;
+    height: 0.2rem;
+    background-color: var(--green);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    transform-origin: 1px;
+  }
+
+  .hamburger-line.open:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  .hamburger-line.open:nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  .hamburger-line.open:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  .mobile-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  .mobile-overlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: var(--navy);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .sidebar-wrapper.open {
+    left: 0;
+  }
+
+  .header {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 5rem 0 2rem;
+    background-color: var(--light-navy);
+  }
+
+  .main-column {
+    margin-top: 4rem;
   }
 
   .sidebar__nav {
@@ -410,20 +510,15 @@ a:hover {
   }
 
   .sidebar__nav ul {
-    display: flex;
-    gap: 2rem;
+    display: block;
   }
 
   .sidebar__nav ul li {
-    margin-bottom: 0;
+    margin-bottom: 1rem;
   }
 
   .sidebar-button::before {
-    display: none;
-  }
-
-  .footer {
-    display: none;
+    display: block;
   }
 
   .section {

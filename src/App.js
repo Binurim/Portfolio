@@ -6,6 +6,15 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   useEffect(() => {
     const mainContent = document.querySelector('.main-column');
@@ -53,11 +62,27 @@ function App() {
 
   return (
     <div className="full-screen-section">
+       <div className="mobile-header">
+          <div className="mobile-header-content">
+            <button 
+              className="hamburger-button" 
+              onClick={toggleMobileMenu}
+              aria-label="Toggle menu"
+            >
+              <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+              <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+              <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+            </button>
+          </div>
+        </div>
+
+        <div className={`mobile-overlay ${isMobileMenuOpen ? 'open' : ''}`} onClick={closeMobileMenu}></div>
+
         <div className="row">
-          <div className="col-lg-4">
+          <div className={`col-lg-4 sidebar-wrapper ${isMobileMenuOpen ? 'open' : ''}`}>
             <header className="header">
               <div className="container">
-                <Sidebar activeSection={activeSection} />
+                <Sidebar activeSection={activeSection} isMobile={true} onLinkClick={closeMobileMenu} />
                 <Footer />
               </div>
             </header>
